@@ -19,6 +19,6 @@ def neighborhood(request,neighborhood_id):
     
     profile=Profile.objects.filter(id=current_user.id).first()
     businesses=Business.objects.filter(id=neighbours.id).all()
-    return render(request, 'neighborhood.html',{'businesses':businesses,'neighbours':neighbours,'neighborhood_id':neighborhood_id})
+    return render(request,'neighborhood.html',{'businesses':businesses,'neighbours':neighbours,'neighborhood_id':neighborhood_id})
 
 

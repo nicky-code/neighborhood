@@ -1,0 +1,25 @@
+{%extends 'all-neighbors/base.html'%}
+
+{% block content %}
+{{block.super}}
+<div class="container-fluid" id="container">
+    <div class="row-align-items-center">
+        <div class="card">
+            <div class="card-body">
+                <p>{{user.username}} lives at {{neighbours.neighbourhood_name}}</p>
+                <br>
+                {% for bu in business %}
+
+                <p>{{bu.business_name}}</p>
+                <p>{{bu.business_email}}</p>
+
+                {% endfor %}
+            </div>
+        </div>
+
+        
+        
+    </div>
+</div>
+
+{% endblock %}
