@@ -12,63 +12,67 @@ Run python3.6 manage.py runserver when you want to implement the features of the
 ### Behaviour
 We want our application to:
 
-A project can be rated based on 3 different criteria
-
-1.Design
-2.Usability
-3.Content
-
-These criteria can be reviewed on a scale of 1-10 and the average score is taken.
-
-As a user, I would like to:
-
-1.View posted projects and their details
-2.Post a project to be rated/reviewed
-3.Rate/ review other users' projects
-4.Search for projects 
-5.View projects overall score
-6.View my profile page
+ a user should be able to his posts and posts of other users
+* Click on a single photo to expand it and also view the details of the photo. The photo details will    appear on a modal within the same route as the main page.
+* a user can Search for another user
+* a user can like and comment on a post
+* a user can view and rate other user's project
 
 ## Input Examples
-1.search users by title of project
-2.Create a profile,registering,sign in,log in,create a post for project,rating regarding the Design,Usability and Content,etc
+1.search users by location of Neighborhood
+2.Create a profile,registering,sign in,log in,create a post for business.
 
 ## Output Examples
-any User will be able to see the proects he/she has posted and their description and rates, and the user may be able to search for other projects.
+any User will be able to see the businesses from the neighborhood  he/she has searched for and other business the user has posted.
 
 ## TDD
-I test my project using Python3.6 manage.py test insta(my app-name).
+I have not test my project but normally i use Python3.6 manage.py test insta(my app-name).
 
 ## Setup/Installation Requirements
 
-1.Your application should be accessible to users on both desktop and mobile formats. You must ensure that your application is responsive to different screen sizes.
+1.You should have a neighborhood class with the following properties:
 
-2.Your application should have a clean, simple, well-organized user interface. Ensure you choose a consistent color scheme and use appropriate fonts for your application. Also, you MUST create a mockup design for your application before you begin development.
+Neighbourhood Name
+Neighborhood location
+Occupants Count
+Admin Foreign key
 
-3.Projects should have a Title, an image of the project's landing page, a detailed description of the project, a link to the live site.
+2.Some of the methods you will need to implement are:
 
-4.Your project should have a user profile that at least the following information:
+create_neigborhood()
+delete_neigborhood()
+find_neigborhood(neigborhood_id)
+update_neighborhood()
+update_occupants()
 
-a.Profile picture of the user
-b.User Bio
-c.Projects the user has posted
-d.A contact information of the user
+3.You will create a user class with the following properties;
 
-5.Your application should have a solid authentication system that allows users to sign up or log in to the application before posting or rating a project.
+name.
+id.
+neighborhood id foreign key
+email address.
 
-6.Projects will be rated/reviewed based on the following criteria:
+4.You will create a business class with the following properties;
 
-a.Design - This is the overall appearance of the project
-b.Usability - This can be translated to the user experience and how responsive the project is.
-c.Content - This includes the technologies used, the font used(is it uniform throughout the project) and grammar.
-These criteria will each be rated/review on a scale of 1-10 and the overall score will be their average.
+Business name
+User foreign key
+neighborhood id foreign key
+Business email address.
+The Methods we will create are:
 
-7.You should create an API so that users can access data from your application. You can create two API endpoints:
+create_business()
+delete_business()
+find_business(business_id)
+update_business()
 
-a.Profile - This endpoint should return all the user profiles with information such as the username, bio, projects of the user and profile picture
-b.Projects- This endpoint should return information pertaining to all the projects posted in your application.
 
-8.Your project should have tests to test the core behaviours. All your tests should pass. 
+5.Your application must have a business search functionality where users can search for businesses in their area.
+
+6.Your project should have a dashboard that you will use to manage the different users.
+
+7.our application should have a solid authentication system that allows users to sign in or register into the application before using it. When a user registers with your application they should receive a confirmation email.
+
+8.Your project should be deployed to Heroku when you have finished with the set features. You should provide the link to your project in the description part of your project repository.
 
 ## Technology used
 Python3.6
