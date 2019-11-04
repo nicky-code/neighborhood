@@ -2,8 +2,10 @@ from django.shortcuts import render
 from django.http  import HttpResponse
 from .models import Neighborhood,Profile,Business
 from .forms import ProfileForm,BusinessForm
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
+@login_required(login_url='/accounts/login/')
 def welcome(request):
     
     current_user = request.user
@@ -12,6 +14,8 @@ def welcome(request):
     return render(request, 'welcome.html',{'neighbours':neighbours,'profile':profile})
 
 
+
+@login_required(login_url='/accounts/login/')
 def neighborhood(request,neighborhood_id):
     
     current_user = request.user
@@ -23,6 +27,7 @@ def neighborhood(request,neighborhood_id):
     return render(request,'neighborhood.html',{'businesses':businesses,'neighbours':neighbours,'neighborhood_id':neighborhood_id})
 
 
+@login_required(login_url='/accounts/login/')
 def new_profile(request):
     
     current_user = request.user
@@ -41,7 +46,7 @@ def new_profile(request):
     return render(request, 'new-profile.html',{"form":form})
 
 
-
+@login_required(login_url='/accounts/login/')
 def myProfile(request):
     
    current_user = request.user 
@@ -49,6 +54,7 @@ def myProfile(request):
    return render(request, 'profile.html', {"profile":profile})
 
 
+@login_required(login_url='/accounts/login/')
 def new_business(request):
 
     current_user = request.user
