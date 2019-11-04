@@ -58,11 +58,14 @@ body {
   <a href="{% url 'welcome' %}">Home</a>
   <a href="/accounts/password/change">Change Password</a>
   <a href="/logout">Logout</a>
+
+  {% else %}
   <a class='btn btn-default' href="/accounts/login">Login</a>
+  {% endif %}
+  <a class='btn btn-default' href="/accounts/register/">Sign up</a>
+  
 </div>
 
-<h2>Animated Sidenav Example</h2>
-<p>Click on the element below to open the side navigation menu.</p>
 <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
 
 <script>
