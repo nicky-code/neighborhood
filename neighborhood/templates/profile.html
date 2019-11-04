@@ -14,4 +14,15 @@
             
         </div>
         </div>
+
+        <div class="col-md-4"> 
+            {%for busin in all_businesses%}       
+             
+              <button type="button"  data-toggle="modal" data-target="#{{busin.id}}">
+                  <img src="{{busin.business_image.url}}" width="270" height="250" class="img-responsive" style="justify-content: space-between;padding:1%" alt="Image">
+              </button>
+      
+              {% empty %}
+
+
         {% endblock %}

@@ -55,6 +55,7 @@ class Profile(models.Model):
         
         
 class Business(models.Model):
+    business_image = models.ImageField(upload_to ='images/',null=True)
     business_name = models.CharField(max_length=40)
     business_email = models.CharField(max_length=40)
     neighborhood = models.ForeignKey(Neighborhood)

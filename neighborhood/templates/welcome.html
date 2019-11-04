@@ -11,6 +11,21 @@
     </div>
     {% endfor %}
 </div>
+<div class="imag"> 
+    {%for busin in all_pro%}       
+     
+      <button type="button"  data-toggle="modal" data-target="#{{proj.id}}">
+          <img src="{{proj.image.url}}" width="270" height="250" class="img-responsive" style="justify-content: space-between;padding:1%" alt="Image">
+      </button>
+
+      {% empty %}
+<div class="row">
+  <h2 class="text-center">There No News Items</h2>
+</div>
+
+      {% endfor %}
+    </div>
+  </div>
             
     
 
