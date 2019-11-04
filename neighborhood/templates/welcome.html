@@ -1,1 +1,17 @@
-<h1> Welcome to the Neighborhood</h1>
+{%extends 'all-neighbors/base.html'%}
+
+{% block content %}
+{{block.super}}
+<div class="container">
+    {% for neigh in neighbor %}
+    <div class="row">
+            
+        <h2 class="center-align">
+            <a href="{% url 'neighborhood' neighborhood_id=neigh.id %}">{{neigh.neighbourhood_name}}</a></h2>
+    </div>
+    {% endfor %}
+</div>
+            
+    
+
+{% endblock %}
