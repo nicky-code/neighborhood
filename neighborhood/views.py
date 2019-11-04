@@ -65,7 +65,7 @@ def new_business(request):
             business_post = form.save(commit=False)
             business_post.user = current_user
             business_post.save()
-            return redirect('profile')
+            return redirect('welcome')
        
 
     else:

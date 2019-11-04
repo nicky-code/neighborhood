@@ -56,6 +56,16 @@ body {
   {% if user.is_authenticated %}
 
   <a href="{% url 'welcome' %}">Home</a>
+
+  <a class="nav-link" href="{%url 'profile'%}">Create a Profile</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{%url 'myProfile'%}">View the Profile</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="{%url 'new-business'%}">Create a POST</a>
+
   <a href="/accounts/password/change">Change Password</a>
   <a href="/logout">Logout</a>
 
